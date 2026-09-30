@@ -1,0 +1,41 @@
+name: Validate routing rules
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "rules/**"
+      - "scripts/validate_rules.py"
+      - ".github/workflows/validate.yml"
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "rules/**"
+      - "scripts/validate_rules.py"
+      - ".github/workflows/validate.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate ruleset
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Run ruleset validator
+        run: python scripts/validate_rules.py
