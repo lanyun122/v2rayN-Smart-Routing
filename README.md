@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/github/license/lanyun122/v2rayN-Smart-Routing)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/lanyun122/v2rayN-Smart-Routing?style=social)](https://github.com/lanyun122/v2rayN-Smart-Routing/stargazers)
+[![Validate routing rules](https://github.com/lanyun122/v2rayN-Smart-Routing/actions/workflows/validate.yml/badge.svg)](https://github.com/lanyun122/v2rayN-Smart-Routing/actions/workflows/validate.yml)
 
 A maintainable routing-rules project for v2rayN, focused on predictable traffic separation, documented outbound bindings, versioned releases, and reproducible validation.
 
@@ -20,6 +21,26 @@ A maintainable routing-rules project for v2rayN, focused on predictable traffic 
 UDP 443 阻断规则默认启用，用于阻止 QUIC/HTTP3 流量并促使支持回退的应用改用 TCP。如果出现游戏、语音视频、TUN 或其他 UDP 应用异常，可以关闭该规则后重试。
 
 其他 v2rayN 版本可能因界面、路由字段或核心行为不同而存在差异，具体兼容情况将记录在每个 Release 的说明中。
+
+### 自动验证
+
+本仓库使用 GitHub Actions 自动验证公开规则集。涉及规则文件、验证脚本或验证工作流的提交和 Pull Request 都会执行以下检查：
+
+- JSON 格式和基础字段是否合法。
+- 规则数量、顺序、出口和默认启用状态是否符合当前公开版本。
+- `UDP 443阻断` 和 `最终代理` 的关键字段是否正确。
+- 域名和 IP 列表中是否存在重复项。
+- 是否意外加入订阅地址、代理分享链接、UUID 或其他疑似认证信息。
+
+绿色的 `Validate routing rules` 徽章表示 `main` 分支当前已通过自动检查。
+
+如需在本地验证，可在仓库根目录运行：
+
+```text
+python scripts/validate_rules.py
+```
+
+自动检查不能替代真实的 v2rayN 导入和网络行为测试。发布新版本前仍应按照文档完成手动导入验证。
 
 ## 项目目标
 
