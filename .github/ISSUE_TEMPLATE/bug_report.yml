@@ -1,0 +1,138 @@
+name: "兼容性或故障报告"
+description: "报告规则导入失败、网站无法访问、分流异常或版本兼容问题"
+title: "[兼容性/故障] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你帮助改进 v2rayN Smart Routing。
+
+        提交前请删除节点、订阅地址、UUID、密码、API Key、Cookie、公网 IP 和其他认证信息。安全漏洞请使用仓库的私密漏洞报告功能，不要公开提交。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: "提交前检查"
+      description: "请确认已经完成以下基础排查。"
+      options:
+        - label: "我已确认问题可以重复出现。"
+          required: true
+        - label: "我已检查是否存在相同或相似的 Issue。"
+          required: true
+        - label: "我已更新或重新下载当前使用的 Geo 数据。"
+          required: true
+        - label: "若问题涉及游戏、语音、TUN、QUIC 或其他 UDP 应用，我已测试关闭 UDP 443 阻断规则。"
+
+  - type: dropdown
+    id: windows_version
+    attributes:
+      label: "Windows 版本"
+      options:
+        - "Windows 11"
+        - "Windows 10"
+        - "其他 Windows 版本"
+    validations:
+      required: true
+
+  - type: input
+    id: v2rayn_version
+    attributes:
+      label: "v2rayN 版本"
+      description: "请填写完整版本号。"
+      placeholder: "例如：7.20.4"
+    validations:
+      required: true
+
+  - type: input
+    id: core_version
+    attributes:
+      label: "代理核心及版本"
+      description: "例如 Xray、sing-box，以及对应版本号。"
+      placeholder: "例如：Xray 25.x.x"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: proxy_mode
+    attributes:
+      label: "使用模式"
+      options:
+        - "系统代理"
+        - "TUN 模式"
+        - "系统代理和 TUN 均测试过"
+        - "其他或不确定"
+    validations:
+      required: true
+
+  - type: input
+    id: ruleset_version
+    attributes:
+      label: "规则版本"
+      description: "请填写 Release 版本，或 main 分支对应的 Commit。"
+      placeholder: "例如：v0.1.0 或 4f68b51"
+    validations:
+      required: true
+
+  - type: input
+    id: affected_rule
+    attributes:
+      label: "可能相关的规则"
+      description: "如果不能确定，可以填写“不确定”。"
+      placeholder: "例如：国内直连、广告过滤、最终代理"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: udp_443
+    attributes:
+      label: "UDP 443 阻断状态"
+      options:
+        - "已启用"
+        - "已关闭"
+        - "已分别测试启用和关闭"
+        - "不确定"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "复现步骤"
+      description: "请按照实际操作顺序描述如何触发问题。"
+      placeholder: |
+        1. 导入规则……
+        2. 选择规则集……
+        3. 打开某网站或应用……
+        4. 出现问题……
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "预期行为"
+      description: "你原本期望发生什么？"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "实际行为"
+      description: "实际发生了什么？是否出现错误提示？"
+    validations:
+      required: true
+
+  - type: textarea
+    id: sanitized_logs
+    attributes:
+      label: "已脱敏的日志或截图"
+      description: "可选。请先删除订阅、节点、UUID、密码、Cookie、API Key、公网 IP 和其他敏感信息。"
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "隐私确认"
+      options:
+        - label: "我确认本报告不包含节点、订阅、UUID、密码、API Key、Cookie 或其他认证信息。"
+          required: true
