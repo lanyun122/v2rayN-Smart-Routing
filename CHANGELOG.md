@@ -10,7 +10,18 @@
 
 ## [Unreleased]
 
-当前暂无未发布变更。
+### Added
+
+- 新增 `CONTRIBUTING.md`，说明问题报告、规则设计、隐私保护和 Pull Request 要求。
+- 新增 `SECURITY.md` 和 GitHub 私密漏洞报告入口。
+- 新增兼容性故障与规则调整两类 Issue 表单。
+- 新增仓库级 `AGENTS.md`，约束编程代理的修改范围和验证要求。
+- 新增 `scripts/validate_rules.py` 规则验证脚本。
+- 新增 GitHub Actions 自动验证工作流。
+
+### Changed
+
+- README 新增自动验证说明和工作流状态徽章。
 
 ## [0.1.0] - 2026-09-30
 
