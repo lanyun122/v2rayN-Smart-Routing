@@ -76,12 +76,24 @@ ChatGPT、Gemini 和流媒体可以绑定到同一个美国出口或美国策略
 
 ### 在线规则地址
 
+#### 最新版
+
 > [!TIP]
-> 以下地址指向 `main` 分支中的最新规则，项目更新后该地址对应的内容也会随之更新。
+> 最新版地址指向 `main` 分支。项目更新后，该地址对应的规则内容也会随之更新，适合希望持续获取最新规则的用户。
 
 ```text
 https://raw.githubusercontent.com/lanyun122/v2rayN-Smart-Routing/refs/heads/main/rules/v2rayn-routing-rules.json
 ```
+
+#### 稳定版 v0.1.0
+
+稳定版地址永久对应首个公开版本，适合视频教程复现、问题排查或需要固定规则内容的用户。
+
+```text
+https://raw.githubusercontent.com/lanyun122/v2rayN-Smart-Routing/v0.1.0/rules/v2rayn-routing-rules.json
+```
+
+[查看 v0.1.0 版本说明](https://github.com/lanyun122/v2rayN-Smart-Routing/releases/tag/v0.1.0)
 
 ### 导入步骤
 
