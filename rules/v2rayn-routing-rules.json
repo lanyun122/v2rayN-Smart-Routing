@@ -1,0 +1,96 @@
+[
+  {
+    "port": "",
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:private",
+      "224.0.0.0/4",
+      "255.255.255.255/32",
+      "ff00::/8"
+    ],
+    "domain": [
+      "geosite:private",
+      "domain:local",
+      "domain:lan"
+    ],
+    "enabled": true,
+    "remarks": "\u5C40\u57DF\u7F51\u76F4\u8FDE"
+  },
+  {
+    "port": "",
+    "outboundTag": "block",
+    "domain": [
+      "geosite:category-ads-all"
+    ],
+    "enabled": true,
+    "remarks": "\u5E7F\u544A\u8FC7\u6EE4"
+  },
+  {
+    "port": "",
+    "outboundTag": "\u7F8E\u56FD\u4F4F\u5B85\u7B56\u7565\u96C6",
+    "domain": [
+      "geosite:openai"
+    ],
+    "enabled": false,
+    "remarks": "GPT"
+  },
+  {
+    "port": "",
+    "outboundTag": "\u7F8E\u56FD\u4F4F\u5B85\u7B56\u7565\u96C6",
+    "domain": [
+      "geosite:google-gemini"
+    ],
+    "enabled": false,
+    "remarks": "Gemini"
+  },
+  {
+    "port": "",
+    "outboundTag": "\u7F8E\u56FD\u4F4F\u5B85\u7B56\u7565\u96C6",
+    "domain": [
+      "geosite:youtube",
+      "geosite:netflix",
+      "geosite:disney",
+      "geosite:hbo",
+      "geosite:primevideo",
+      "geosite:spotify",
+      "geosite:twitch"
+    ],
+    "enabled": false,
+    "remarks": "\u6D41\u5A92\u4F53"
+  },
+  {
+    "port": "",
+    "outboundTag": "\u9999\u6E2F\u56FA\u5B9A\u8282\u70B9",
+    "domain": [
+      "geosite:category-cryptocurrency"
+    ],
+    "enabled": false,
+    "remarks": "\u4EA4\u6613\u6240"
+  },
+  {
+    "port": "443",
+    "network": "udp",
+    "outboundTag": "block",
+    "enabled": true,
+    "remarks": "UDP 443\u963B\u65AD"
+  },
+  {
+    "port": "",
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:cn"
+    ],
+    "domain": [
+      "geosite:cn"
+    ],
+    "enabled": true,
+    "remarks": "\u56FD\u5185\u76F4\u8FDE"
+  },
+  {
+    "port": "",
+    "network": "tcp,udp",
+    "outboundTag": "proxy",
+    "enabled": true,
+    "remarks": "\u6700\u7EC8\u4EE3\u7406"
+  }
+]
