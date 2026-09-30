@@ -1,0 +1,145 @@
+name: "规则新增或调整请求"
+description: "建议新增域名规则、调整现有规则、出口类型、默认状态或匹配顺序"
+title: "[规则请求] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你为 v2rayN Smart Routing 提供规则建议。
+
+        请尽量提供公开、可验证的域名或 Geo 分类依据。请勿提交节点、订阅地址、UUID、密码、API Key、Cookie、住宅代理凭据或其他认证信息。
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: "提交前检查"
+      options:
+        - label: "我已检查是否存在相同或相似的 Issue。"
+          required: true
+        - label: "这不是需要私密处理的安全漏洞。"
+          required: true
+        - label: "本请求不包含节点、订阅或任何认证信息。"
+          required: true
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: "请求类型"
+      options:
+        - "新增一条规则"
+        - "扩充现有规则的匹配范围"
+        - "缩小现有规则的匹配范围"
+        - "修改规则顺序"
+        - "修改预期出口"
+        - "修改默认启用状态"
+        - "删除或重命名规则"
+        - "其他"
+    validations:
+      required: true
+
+  - type: input
+    id: service_name
+    attributes:
+      label: "服务或规则名称"
+      description: "填写网站、应用、服务或现有规则的名称。"
+      placeholder: "例如：GitHub、Telegram、流媒体"
+    validations:
+      required: true
+
+  - type: textarea
+    id: domains
+    attributes:
+      label: "目标域名或匹配范围"
+      description: "每行填写一个公开域名、geosite、geoip 或其他匹配项。不要填写私人节点地址。"
+      placeholder: |
+        domain:example.com
+        domain:api.example.com
+        geosite:example-category
+    validations:
+      required: true
+
+  - type: dropdown
+    id: expected_outbound
+    attributes:
+      label: "期望出口"
+      options:
+        - "direct：直接连接"
+        - "proxy：最终代理"
+        - "block：阻断"
+        - "自定义出口或策略组"
+        - "暂不确定，希望讨论"
+    validations:
+      required: true
+
+  - type: input
+    id: affected_rule
+    attributes:
+      label: "涉及的现有规则"
+      description: "如果是新规则或不能确定，可以填写“无”或“不确定”。"
+      placeholder: "例如：国内直连、流媒体、最终代理"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: default_state
+    attributes:
+      label: "建议的默认状态"
+      options:
+        - "默认启用"
+        - "默认关闭，由用户配置后启用"
+        - "保持现有状态"
+        - "暂不确定，希望讨论"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "请求理由"
+      description: "说明当前规则存在的问题，以及为什么需要新增或调整。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: "期望行为"
+      description: "请说明修改后流量应如何匹配和从哪个出口发送。"
+      placeholder: "访问……时，应优先匹配……规则，并通过……出口。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "公开依据或参考链接"
+      description: "可填写官方域名文档、上游 geosite 列表或其他公开资料。无法提供时请说明原因。"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: "预计影响范围"
+      options:
+        - "适合大多数用户的基础规则"
+        - "仅适合部分地区或网络环境"
+        - "需要用户绑定自定义出口"
+        - "可能影响现有规则顺序"
+        - "暂不确定"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: "补充说明"
+      description: "可选。可以添加已脱敏的截图、测试结果或兼容性说明。"
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "最终确认"
+      options:
+        - label: "我确认以上内容不包含节点、订阅、UUID、密码、API Key、Cookie、公网 IP 或其他敏感认证信息。"
+          required: true
