@@ -8,6 +8,29 @@ A maintainable routing-rules project for v2rayN, focused on predictable traffic 
 
 面向 v2rayN 用户的可维护智能分流规则集，提供局域网直连、广告过滤、AI 与流媒体专用出口、交易所固定出口、国内直连和最终代理等规则。
 
+## 下载与导入 / Download
+
+日常使用请复制下面的最新版规则地址，在 **v2rayN → 设置 → 路由设置** 中通过 **从订阅 Url 中导入规则**。
+
+**最新版规则：**
+
+```text
+https://raw.githubusercontent.com/lanyun122/v2rayN-Smart-Routing/refs/heads/main/rules/v2rayn-routing-rules.json
+```
+
+需要固定内容、录制教程或回滚时，请使用稳定版：
+
+**稳定版 v0.1.0：**
+
+```text
+https://raw.githubusercontent.com/lanyun122/v2rayN-Smart-Routing/v0.1.0/rules/v2rayn-routing-rules.json
+```
+
+[查看完整导入教程](#快速开始) · [查看 v0.1.0 版本说明](https://github.com/lanyun122/v2rayN-Smart-Routing/releases/tag/v0.1.0)
+
+> [!TIP]
+> 不知道选哪个？日常使用最新版；教程演示、问题复现或回滚时使用稳定版。
+
 > [!IMPORTANT]
 > 本项目只提供路由规则和使用文档，不提供节点、订阅、住宅代理、账号或任何认证信息。
 
