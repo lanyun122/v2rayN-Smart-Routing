@@ -40,7 +40,7 @@ EXPECTED_RULES = [
     {
         "remarks": "UDP 443阻断",
         "outboundTag": "block",
-        "enabled": True,
+        "enabled": False,
     },
     {
         "remarks": "国内直连",
