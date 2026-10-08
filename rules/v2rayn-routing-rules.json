@@ -71,7 +71,7 @@
     "port": "443",
     "network": "udp",
     "outboundTag": "block",
-    "enabled": true,
+    "enabled": false,
     "remarks": "UDP 443\u963B\u65AD"
   },
   {
