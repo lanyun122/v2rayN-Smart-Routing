@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/lanyun122/v2rayN-Smart-Routing/v0.1.0/rules/v2
 
 当前公开规则共包含 9 条路由规则。GPT、Gemini、流媒体和交易所四条自定义出口规则默认关闭，用户需要先绑定自己的出口节点或策略组，再根据需要启用。
 
-UDP 443 阻断规则默认启用，用于阻止 QUIC/HTTP3 流量并促使支持回退的应用改用 TCP。如果出现游戏、语音视频、TUN 或其他 UDP 应用异常，可以关闭该规则后重试。
+UDP 443 阻断规则默认关闭，仅作为 QUIC/HTTP3 兼容性排查选项。它会阻断应用产生的 UDP 443 流量，并促使支持回退的网站和应用改用 TCP。请确认实际存在 QUIC、TUN 或 UDP 转发异常后再手动启用。
 
 其他 v2rayN 版本可能因界面、路由字段或核心行为不同而存在差异，具体兼容情况将记录在每个 Release 的说明中。
 
